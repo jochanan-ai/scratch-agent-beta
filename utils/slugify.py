@@ -17,5 +17,8 @@ def slugify(text):
     Every run of one or more non-alphanumeric characters is replaced by a
     single hyphen and leading/trailing hyphens are stripped, so the output
     never contains consecutive hyphens.
+
+    >>> slugify("Hello,  World!")
+    'hello-world'
     """
     return _NON_ALNUM_RE.sub("-", text.lower()).strip("-")
